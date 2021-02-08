@@ -38,6 +38,9 @@ class freeradius::params {
         default => '2',
       }
     }
+    default: {
+      fail("OS ${::operatingsystem} is not supported")
+    }
   }
 
   # Use the FR version fact if defined, otherwise use our best estimate from above
